@@ -1,0 +1,19 @@
+.main-header {
+    background-image: url("https://mp-seoul-image-production-s3.mangoplate.com/0776fea76b4a824ff583128cb51dd45c.jpg");
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+}
+
+legend {
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+fieldset {
+    appearance: none;
+}
