@@ -24,6 +24,7 @@ const Main = () => {
                     </fieldset>
                 </div>
             </header>
+            <Map/>
         </main>
     );
 }
