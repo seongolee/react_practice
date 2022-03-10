@@ -1,0 +1,48 @@
+.main-header .Header-menu-list {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin-left: auto;
+}
+
+.main-header .Header-menu-list .Header-menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+}
+
+.Header-menu-link {
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.Header-menu-text {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.Header-icon-button-list {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-profile-button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.user-profile-button-person-icon {
+    background-image: url("https://mp-seoul-image-production-s3.mangoplate.com/web/resources/2018022864551sprites_desktop.png");
+    background-position: -82px -919px;
+    width: 34px;
+    height: 34px;
+    display: block;
+}
