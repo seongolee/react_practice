@@ -1,3 +1,7 @@
+legend {
+    display: none;
+}
+
 .main-header {
     background-image: url("https://mp-seoul-image-production-s3.mangoplate.com/0776fea76b4a824ff583128cb51dd45c.jpg");
     position: relative;
@@ -7,13 +11,144 @@
     overflow: hidden;
 }
 
-legend {
-    display: none;
-    position: absolute;
-    width: 0;
-    height: 0;
+.main-header .title {
+    position: relative;
+    margin: 0 auto;
+    width: 280px;
+    font-size: 1.625rem;
+    color: #fff;
+    line-height: 32px;
 }
 
-fieldset {
-    appearance: none;
+.main-header .first-title {
+    padding-top: 61px;
+}
+
+.main-header .main-search {
+    position: relative;
+    margin: 34px 15px 0 15px;
+    height: 48px;
+    border: 1px solid #ff792a;
+    border-radius: 50px;
+    background-color: #fff;
+}
+
+.main-header .main-search .search-word {
+    position: absolute;
+    top: 0;
+    right: 110px;
+    bottom: 0;
+    left: 48px;
+}
+
+.main-header .main-search input[type=text] {
+    display: block;
+    width: 100%;
+    font-size: 0.813rem;
+    color: #cbcbcb;
+    line-height: 44px;
+    border: 0;
+    outline: none;
+}
+
+.main-header .main-search .search-btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 110px;
+    font-size: 0.813rem;
+    color: #fff;
+    line-height: 48px;
+    border-radius: 50px;
+    background-color: #ff7100;
+    height: 100%;
+}
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 61px;
+}
+
+.Header-transparent {
+    border-bottom: 0;
+    background-color: transparent;
+}
+
+@media only screen and (min-width: 769px){
+    .main-header .title {
+        width: 720px;
+        font-size: 2.2rem;
+        line-height: 45px;
+    }
+
+    .main-header .main-search {
+        margin: 45px auto 60px auto;
+        height: 50px;
+        width: 738px;
+        border: 2px solid #ff7100;
+        border-radius: 80px;
+        overflow: hidden;
+    }
+
+    .main-header .main-search .search-word {
+        right: 238px;
+        left: 85px;
+    }
+
+    .main-header .main-search .icon {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 27px;
+        text-indent: -9999px;
+    }
+
+    .main-header .main-search .icon {
+        left: -52px;
+        margin-top: -15.5px;
+        background-image: url("https://mp-seoul-image-production-s3.mangoplate.com/web/resources/2018022864551sprites_desktop.png");
+        background-position: -935px -620px;
+        width: 30px;
+        height: 31px;
+    }
+
+    .main-header .main-search input[type=text] {
+        height: 50px;
+        font-size: 1.1rem;
+        line-height: 50px;
+        color: #000;
+    }
+
+    /* placeholder 가 보일때 속성값 변경 */
+    .main-header .main-search input[type=text]:placeholder-shown {
+        line-height: 50px;
+        color: #cbcbcb;
+        opacity: 1;
+    }
+
+    .main-header .main-search .search-word .clear-btn {
+        display: none;
+        position: absolute;
+        top: 34%;
+        right: -53px;
+        color: #dbdbdb;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .main-header .main-search .search-btn {
+        width: 180px;
+        font-size: 1.313rem;
+        line-height: 52px;
+        border-radius: 80px;
+    }
 }
