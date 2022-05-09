@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./Main.css";
-import Header from "../Components/Header";
-import Map from "../Components/Map";
+import Header from "../components/Header";
+import Map from "../components/Map";
 
 const Main = () => {
     return (

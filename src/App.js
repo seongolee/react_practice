@@ -1,19 +1,18 @@
 import React from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 // import "./Reset.css"
-import Practice from "./practice/Practice";
+import PracticeApp from "./practice/PracticeApp";
 
 const App = () => {
 
     return (
-        // <Router>
-        //     <Routes>
-        //         <Route exact path="/" element=<Main/>/>
-        //         <Route exact path="/signup" element=<SignUp/>/>
-        //     </Routes>
-        // </Router>
         <div className="App">
-            <Practice></Practice>
+            {/*<Router>*/}
+            {/*    <Routes>*/}
+            {/*        <Route exact path="/" element=<Main/>/>*/}
+            {/*        <Route exact path="/signup" element=<SignUp/>/>*/}
+            {/*    </Routes>*/}
+            {/*</Router>*/}
         </div>
     );
 }
