@@ -2,10 +2,10 @@ import React from "react";
 
 const Nav = (props) => {
     const lis = []
-    for(let i=0; i<props.topics.length; i++){
+    for (let i = 0; i < props.topics.length; i++) {
         let t = props.topics[i]
         lis.push(<li key={t.id}>
-            <a href={'/read/'+t.id} onClick={(e) => {
+            <a href={'/read/' + t.id} onClick={(e) => {
                 e.preventDefault();
                 props.onChangeMode(t.id);
             }}>
@@ -13,7 +13,9 @@ const Nav = (props) => {
     }
     return (
         <nav>
-            {lis}
+            <ol>
+                {lis}
+            </ol>
         </nav>
     );
 }

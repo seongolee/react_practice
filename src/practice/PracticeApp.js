@@ -3,6 +3,7 @@ import Header from "./Header";
 import Nav from "./Nav";
 import Article from "./Article";
 import Create from './Create';
+import Update from './Update';
 
 const PracticeApp = () => {
     const [mode, setMode] = useState('WELCOME');
@@ -16,6 +17,8 @@ const PracticeApp = () => {
     ]);
 
     let content = null;
+    let contextControl = null;
+
     if(mode === 'WELCOME'){
         content = <Article title="Welcome" body="Hello, WEB"></Article>
     } else if(mode === 'READ'){
@@ -28,6 +31,22 @@ const PracticeApp = () => {
             }
         }
         content = <Article title={title} body={body}></Article>
+        contextControl = <>
+            <li><a href={'/update/' + id} onClick={(event) => {
+                event.preventDefault();
+                setMode('UPDATE');
+            }}>Update</a></li>
+            <li><input type='button' value='Delete' onClick={() => {
+                const newTopics = [];
+                for(let i=0; i<topics.length; i++){
+                    if(topics[i].id !== id){
+                        newTopics.push(topics[i]);
+                    }
+                }
+                setTopics(newTopics);
+                setMode('WELCOME');
+            }}/></li>
+        </>
     } else if(mode === 'CREATE'){
         content = <Create onCreate={(_title, _body) => {
             const newTopic = {id: nextId, title:_title, body:_body};
@@ -37,8 +56,30 @@ const PracticeApp = () => {
             setId(nextId);
             setNextId(nextId + 1);
             setMode('READ')
-
         }}/>
+    } else if(mode === 'UPDATE'){
+        let title, body = null;
+        for(let i=0; i<topics.length; i++){
+            if(topics[i].id === id){
+                title = topics[i].title;
+                body = topics[i].body;
+                break;
+            }
+        }
+        content = <Update title={title} body={body} onUpdate={(title, body) => {
+            const newTopics = [...topics];
+            const updatedTopic = {id:id, title:title, body:body};
+
+            for(let i=0; i<newTopics.length; i++){
+                if(newTopics[i].id === id){
+                    newTopics[i] = updatedTopic;
+                    break;
+                }
+            }
+
+            setTopics(newTopics);
+            setMode('READ');
+        }}></Update>
     }
 
     return (
@@ -51,10 +92,13 @@ const PracticeApp = () => {
                 setId(id);
             }}></Nav>
             {content}
-            <a href="/create" onClick={(e) => {
-                e.preventDefault();
-                setMode('CREATE');
-            }}>Create</a>
+            <ul>
+                <li><a href="/create" onClick={(e) => {
+                    e.preventDefault();
+                    setMode('CREATE');
+                }}>Create</a></li>
+                {contextControl}
+            </ul>
         </div>
     );
 }
