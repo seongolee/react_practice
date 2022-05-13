@@ -1,0 +1,33 @@
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+li {
+    display: inline;
+    margin-left: 10px;
+}
+
+.header-logo-icon {
+    width: 100px;
+}
+
+.header-map-icon {
+    width: 61px;
+}
+
+.header-user-icon {
+    width: 61px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-between;
+    font-size: 0;
+}
+
+.user-profile-button {
+    width: 120px;
+}
